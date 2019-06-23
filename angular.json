@@ -3,21 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wellbeingatwork": {
+    "Angular7": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wellbeingatwork",
+            "outputPath": "dist/Angular7",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,10 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -62,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wellbeingatwork:build"
+            "browserTarget": "Angular7:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "wellbeingatwork:build:production"
+              "browserTarget": "Angular7:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wellbeingatwork:build"
+            "browserTarget": "Angular7:build"
           }
         },
         "test": {
@@ -84,7 +80,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -107,7 +103,7 @@
         }
       }
     },
-    "wellbeingatwork-e2e": {
+    "Angular7-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "wellbeingatwork:serve"
+            "devServerTarget": "Angular7:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "wellbeingatwork:serve:production"
+              "devServerTarget": "Angular7:serve:production"
             }
           }
         },
@@ -136,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "wellbeingatwork"
+  "defaultProject": "Angular7"
 }

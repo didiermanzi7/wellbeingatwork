@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "9"
+  - "8.9"
 dist: trusty
 sudo: required
 branches:
@@ -14,6 +14,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/wellbeingatwork
+  local_dir: dist/Angular7
   on:
     branch: master

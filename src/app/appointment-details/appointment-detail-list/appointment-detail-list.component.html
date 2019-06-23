@@ -1,0 +1,13 @@
+<table class="table table-hover">
+  <th>Name</th>
+  <th>Complaint</th>
+  <th>Date</th>
+  <tr *ngFor="let ap of appointments">
+    <td>{{ap.name}}</td>
+    <td>{{ap.complaint}}</td>
+    <td>{{ap.date}}</td>
+    <!-- td>
+      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(ap.apid)"></i>
+    </td-->
+  </tr>
+</table>

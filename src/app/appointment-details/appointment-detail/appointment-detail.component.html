@@ -1,0 +1,52 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="APID" [value]="service.formData.APID">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+      <input name="Name" #CardOwnerName="ngModel" [(ngModel)]="service.formData.Name" class="form-control"
+        placeholder="Name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="far fa-angry"></i>
+        </div>
+      </div>
+      <input name="Complaint" #CardNumber="ngModel" [(ngModel)]="service.formData.Complaint" 
+      class="form-control" placeholder="Complaint">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-7">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+        </div>
+        <input name="Date" #ExpirationDate="ngModel" [(ngModel)]="service.formData.Date" class="form-control"
+          placeholder="MM/YY" required>
+      </div>
+    </div>
+    <div class="form-group col-md-5">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+            <i class="fas fa-clock"></i>
+          </div>
+        </div>
+        <input type="text" name="TimeofDay" #CVV="ngModel" [(ngModel)]="service.formData.TimeofDay" class="form-control" placeholder="TimeofDay"
+        required >
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i> Submit</button>
+  </div>
+</form>

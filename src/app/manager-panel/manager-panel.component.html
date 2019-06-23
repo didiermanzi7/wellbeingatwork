@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-white">Wellbeing @ Work</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/managerpanel">Doctor Panel</a>
+                <a class="nav-link" style="margin-left: 157px; margin-top: -40px;" routerLink="/employeepanel">Employee Panel</a>
+            </li>
+        </ul>
+    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+</nav>
+
+<div class="container">
+    <div class="jumbtron">
+      <h1 class="display-7 text-center">Upcoming medical checks</h1>
+      <hr>
+      <div class="row">
+        <div class="col-md-5">
+            <ejs-schedule [eventSettings]="eventData" width='470px' height='500px' [selectedDate]="currentDate"  timezone="UTC" [currentView]="newViewMode"></ejs-schedule>
+        </div>
+        <div class="col-md-7">
+          <app-appointment-detail-list></app-appointment-detail-list>
+        </div>
+      </div>
+    </div>
+</div>
