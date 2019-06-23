@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventSettingsModel, View } from '@syncfusion/ej2-angular-schedule';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manager-panel',
@@ -8,7 +9,7 @@ import { EventSettingsModel, View } from '@syncfusion/ej2-angular-schedule';
 })
 export class ManagerPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -36,5 +37,9 @@ export class ManagerPanelComponent implements OnInit {
     }]
   }
 
+  onLogout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/user/login']);                                                                                                                           
+  }
 }
 
